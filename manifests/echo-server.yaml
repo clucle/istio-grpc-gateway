@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: clucle-helloworld
+  name: clucle-helloworld
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: clucle-helloworld
+  template:
+    metadata:
+      labels:
+        run: clucle-helloworld
+    spec:
+      containers:
+      - name: clucle-helloworld
+        imagePullPolicy: Never
+        image: clucle/grpc-helloworld
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: clucle-helloworld
+  name: clucle-helloworld
+spec:
+  ports:
+  - name: grpc-web
+    port: 50051
+    targetPort: 50051
+  selector:
+    run: clucle-helloworld
+  sessionAffinity: None
+  type: ClusterIP
