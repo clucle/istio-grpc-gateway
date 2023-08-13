@@ -37,5 +37,9 @@ $ evans proto/hello-world.proto
 ## Server
 ```
 $ kubectl apply -f manifests/
+```
+
+## Client
+```
 $ evans proto/hello-world.proto -p 80
 ```
