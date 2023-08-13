@@ -31,3 +31,11 @@ $ docker run -p 50051:50051 grpctest/helloworld
 $ brew install evans
 $ evans proto/hello-world.proto
 ```
+
+# Kubernetes Istio
+
+## Server
+```
+$ kubectl apply -f manifests/
+$ evans proto/hello-world.proto -p 80
+```

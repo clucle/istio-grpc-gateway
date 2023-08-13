@@ -17,7 +17,7 @@ spec:
       containers:
       - name: clucle-helloworld
         imagePullPolicy: Never
-        image: clucle/grpc-helloworld
+        image: grpctest/helloworld
 ---
 apiVersion: v1
 kind: Service
